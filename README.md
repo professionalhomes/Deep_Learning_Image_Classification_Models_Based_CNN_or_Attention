@@ -5,35 +5,36 @@ This readme is introduced in Chinese (including most of the comments in the code
 
 ## 1. Introduction
 
-本项目包含了自 AelxNet 以来经典的深度学习图像分类模型，大部分模型是基于卷积神经网络的，也有一部分是基于注意力机制的。 博客链接是对模型的介绍，会持续更新...
+This project contains classic deep learning image classification models since AelxNet, most of the models are based on convolutional neural networks and some are based on attention mechanisms. The blog link is an introduction to the models, which will be continuously updated...
 
-在项目目录中，模型的搭建代码在classic_models文件夹中；**所有的模型训练代码和推理代码都是共用的，只有模型搭建代码不同**，训练代码有三个不同的版本：
-- train_sample.py是最简单的实现，必须掌握，以下两个版本看个人需求。
-- train.py是简单升级版的实现，具体改进的地方见train.py脚本中顶部的注释。
-- train_distrubuted.py支持多gpu分布式训练。  
+In the project directory, the model building code is in the classic_models folder; **All the model training code and inference code are shared, only the model building code is different**, there are three different versions of the training code: 
+- train_sample.py is the simplest implementation, which must be mastered, and the following two versions depend on the individual needs.
+- train.py is the simple upgraded implementation, see the comments at the top in the train.py script for specific improvements.
+- train_distrubuted.py supports multi-gpu distributed training.  
 
-最后，test.py是推理脚本，用于使用训练好的模型。dataload中是数据集加载代码；utils是封装各种功能的包，包括学习策略，训练和验证，分布式初始化，可视化等等。建议先学习掌握classic_models，train_sample.py和test.py这三部分，其他部分用到的时候再学习。
-
+Finally, test.py is the inference script for using the trained model. dataload is the dataset loading code; utils is the package that encapsulates various functions, including learning strategy, training and validation, distributed initialization, visualization, and so on. It is recommended to learn and master the three parts of classic_models, train_sample.py and test.py first, and then learn the other parts when they are used.
 ## 2. Dataset And Project 
-本项目是使用python语言基于pytorch深度学习框架编写的。
+This project is written in python language based on pytorch deep learning framework.
 
-默认的数据集是花朵数据集，此数据集包含五种不同种类的花朵图像，用于训练的图像有3306张，用于验证的图像有364张。下载链接如下：https://pan.baidu.com/s/1EhPMVLOQlLNN55ndrLbh4Q 
-提取码：7799 。
+The default dataset is flower dataset, this dataset contains five different kinds of flower images, there are 3306 images for training and 364 images for validation. The download link is as follows: https://pan.baidu.com/s/1EhPMVLOQlLNN55ndrLbh4Q 
+Extract code: 7799 .
 
-**下载完成后，记得在训练和推理代码中，将数据集加载的路径修改成自己电脑中下载存储的路径。**
+** After the download is complete, remember to change the path where the dataset is loaded to the path where it is downloaded and stored in your own computer in the training and inference code. ** 
 
-数据集图像展示如下： 
+The dataset images are displayed below:
+
+Translated with DeepL.com (free version)
 <div align="center">
   <img src="https://user-images.githubusercontent.com/102544244/192847344-958812cc-0988-4fa4-a458-ed842c41b8d2.png"  alt="Dataset show" width="700"/>
 </div>
   
  
-开启模型的训练只需要在IDE中执行train_sample.py脚本即可；或者在终端执行命令行`python train_sample.py` 训练的log打印示例如下：
+Enabling training of the model is simply a matter of executing the train_sample.py script in the IDE; or executing the command line `python train_sample.py` in the terminal An example of a log printout of the training is shown below:
 <div align="center">
   <img src="https://user-images.githubusercontent.com/102544244/192849338-d7297768-88d4-40f8-83b6-79962ace7fd4.png"  alt="training log" width="600"/>
 </div>
  
-将模型用于推理只需要在IDE中执行test.py脚本即可；或者在终端执行命令行`python test.py` 给一张向日葵的图像，模型的输出结果示例结果如下：：
+Using the model for inference is simply a matter of executing the test.py script in the IDE; or executing the command line `python test.py` in the terminal Given an image of a sunflower, the output of the model Sample results are as follows:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/102544244/192850216-f9ebf217-97f9-4c87-a5e5-4c1e032f436b.png"  alt="infer show" width="400"/>
@@ -41,7 +42,7 @@ This readme is introduced in Chinese (including most of the comments in the code
  
 
 ## 3. Methods And Papers
-以下是本项目支持的模型列表
+The following is a list of models supported by this program
 1. **[AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)**
    - *ImageNet Classification with Deep Convolutional Neural Networks*
 
